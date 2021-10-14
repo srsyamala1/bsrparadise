@@ -1,0 +1,492 @@
+<html>
+  <head>
+    <script src="dist/js/jquery.js"></script>
+  <link rel="stylesheet" href="dist/css/bootstrap.css">
+	<script>
+	  $(function(){
+	     $("#btn1").mouseout(function(){
+		    var name = $("#fname").val().trim();
+			if(name=="") 
+			{
+			  $("#nameerror").show();
+			  $("#fname").css({"border":"3px solid red"});
+			}else{
+			   $("#nameerror").hide();
+			   $("#fname").css({"border":""});
+			}
+			//name validation end here
+			//isNaN   is not a number
+			
+			var mobile =$("#mobile").val().trim();
+			if( (mobile=="") ||(mobile.length !=10) || (isNaN(mobile)) )
+			{
+			  $("#mobileerror").show();
+			  $("#mobile").css({"border":"3px solid red"});
+			}else{
+			   $("#mobileerror").hide();
+			   $("#mobile").css({"border":""});
+			}
+			//mobile vlidation end here
+			var email = $("#email").val().trim();
+			var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if ((email=="") || (! pattern.test(email)))
+			{
+			  $("#emailerror").show();
+			  $("#email").css({"border":"3px solid red"});
+			}else{
+			   $("#emailerror").hide();
+			   $("#email").css({"border":""});
+			}
+			//email validation end here
+			
+			var city = $("#city").val().trim();
+			
+			if (city=="") 
+			{
+			  $("#cityerror").show();
+			  $("#city").css({"border":"3px solid red"});
+			}else{
+			   $("#cityerror").hide();
+			   $("#city").css({"border":""});
+			}
+			
+			var address = $("#address").val().trim();
+			
+			if (address=="") 
+			{
+			  $("#addresserror").show();
+			  $("#address").css({"border":"3px solid red"});
+			}else{
+			   $("#addresserror").hide();
+			   $("#address").css({"border":""});
+			}
+			
+			var pass = $("#password").val().trim();
+			var cpass = $("#cpassword").val().trim();
+			
+			if ((password=="") || (cpass=="") ||(pass !=cpass) ||(pass<=6) )
+			{
+			  $("#passworderror").show();
+			  $("#cpassworderror").show();
+			  $("#password").css({"border":"3px solid red"});
+			  $("#cpassword").css({"border":"3px solid red"});
+		
+			}else{
+			   $("#passworderror").hide();
+			    $("#cpassworderror").hide();
+			   $("#password").css({"border":""});
+			   $("#cpassword").css({"border":""});
+			}
+			//file validation starts
+			var doc = $("#doc").val().trim();
+			
+			if (doc=="") 
+			{
+			  $("#fileerror").show();
+			  $("#doc").css({"border":"3px solid red"});
+			}else{
+			   $("#fileerror").hide();
+			   $("#doc").css({"border":""});
+			}
+			//t&c validations starts \
+			if($("#tnc:checked").length==0 )
+			{
+			 $("#tncerror").show();
+			 $("#tncerror").css({"color":"red"});
+			 $("#tnc").css({"border":"3px solid red"});
+			 }else{
+			 $("#tncerror").hide();
+			   $("#tnc").css({"border":""});
+			 }
+		 });
+		 
+		 
+		 $("#btn2").click(function(){
+		     $("#nameerror").hide();
+			 $("#fname").css({"border":""});
+			 
+		     $("#mobileerror").hide();
+			 $("#mobile").css({"border":""});
+			 
+			 $("#emailerror").hide();
+			  $("#email").css({"border":""});
+			  
+			  $("#cityerror").hide();
+			   $("#city").css({"border":""});
+			   
+			    $("#addresserror").hide();
+			   $("#address").css({"border":""});
+			   
+			    $("#passworderror").hide();
+			   $("#password").css({"border":""});
+			   
+			    $("#cpassworderror").hide();
+			   $("#cpassword").css({"border":""});
+			   
+			    $("#fileerror").hide();
+			   $("#doc").css({"border":""});
+			   
+			   $("#tncerror").hide("slow");
+			   $("#tnc").css({"border":""});
+			   
+			   $("#tncdata").hide("fast");
+		 });
+		 $("#mytnc").click(function(){
+		    $("#tncdata").slideToggle("slow");
+		 });
+		 
+		 $("#tnc").click(function(){
+		    if($("#tnc:checked").length==1 )
+			{
+			   $("#tncdata").show("slow");
+			}else{
+			  $("#tncdata").hide("fast");
+			}
+		 });
+	  });
+	</script>
+	<style>
+	  i{ color:red; display:none;}
+	</style>
+  </head>
+  <body>
+  
+  <!-- top navigation example-->	
+			<br>
+			<div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+			<img src="logo1.png" width="70" height="50"> 
+            <a class="navbar-brand" href="#">BSR PARADISE</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="nav.html">
+			  <i class ="fa fa-home"></i>Home</li></a>
+              <li><a href="about.html">
+			  <i class ="fa fa-users"></i>About</a></li>
+              <li><a href="contact.html">
+			  <i class ="fa fa-phone-square"></i>Contact Us</a></li>
+             
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			
+                <i class ="fa fa-cogs"></i>
+				Our Services <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+                  <li><a href="site-visit.html">
+				  <i class="fa fa-desktop">Book Site Visit</i></a></li>
+				  <li><a href="customer.html">
+				  <i class="fa fa-headphones">Cusromer Suppot</i></a></li>
+				  <li><a href="feedback.html">
+				  <i class="fa fa-search">Degital Marketing</i></a></li>
+                  
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              
+              <li><a href="#"data-toggle="modal" data-target="#myModal">Login</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#signup">Sign Up</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+	
+			<div class="row">
+				<div class="col-sm-1">
+					
+						</div><!--1 end -->
+						<div class="col-sm-5">
+					<br>
+					<div class="panel panel-primary">
+						<div class="panel-heading"> Contact Us</div>
+						<div class="panel-body"
+			     <div class="row form-group">
+					 <div class="col-sm-2">Full Name</div>
+					 <div class="col-sm-4"><input type="text" class="form-control input-sm" id="fname">
+					  <i id="nameerror">Invalid name</i>
+					 </div>
+					 <div class="col-sm-2">Mobile</div>
+					 <div class="col-sm-4"><input type="text" class="form-control input-sm" id="mobile">
+					  <i id="mobileerror">Invalid Mobile</i>
+					 </div>
+				  </div>
+				  
+				  <div class="row form-group">
+				     <div class="col-sm-2">E-mail</div>
+					 <div class="col-sm-4">
+					   <input type="text" class="form-control  input-sm" id="email">
+					   <i id="emailerror">Invalid email</i>
+					 </div>
+					 
+					 <div class="col-sm-2">City</div>
+					 <div class="col-sm-4">
+					   <select class="form-control  input-sm" id="city">
+					    <option value="">Chose city</option>
+					    <option value="bang">bangalore</option>
+					    <option value="hyd">hyderabad</option>
+					    <option value="kdkr">kandukur</option>
+					   </select>
+					   
+					   <i id="cityerror">Invalid city</i>
+					 </div>
+				  </div>
+				  
+				  <div class="row form-group">
+				     <div class="col-sm-2">Address</div>
+				     <div class="col-sm-10">
+					   <textarea id="address" class="form-control"></textarea>
+					    <i id="addresserror">Invalid address</i>
+					 </div>
+				  </div>
+				  
+				  <div class="row form-group">
+				     <div class="col-sm-2">password</div>
+					 <div class="col-sm-4">
+					   <input type="text" class="form-control  input-sm" id="password" maxlength="8">
+					   <i id="passworderror">Invalid password</i>
+					 </div>
+					 <div class="col-sm-2">confirm password</div>
+					 <div class="col-sm-4">
+					    <input type="text" class="form-control input-sm" id="cpassword" maxlength="8">
+						<i id="cpassworderror">Invalid password or not matched</i>
+					 </div>
+				  </div>
+				  
+				  <div class="row form-group">
+				     <div class="col-sm-2">File</div>
+				     <div class="col-sm-4">
+					    <input type="file" class="form-control input-sm" id="doc">
+						 <i id="fileerror">Invalid Docuent selector</i>
+					 </div>
+					 
+					  <div class="col-sm-2">T&C</div>
+				     <div class="col-sm-4">
+					    <input type="checkbox"  id="tnc">
+						 <p id="tncerror" style="display:none">
+						 Inorder process  next please select t&c</p>
+						 <a href="#" id="mytnc">I am agree on terms on conditions</a>
+						</div>
+					 </div>
+					 <div class="form-group">
+					   <div id="tncdata" style="display:none" class="bg-danger text-success">
+					   <h5><b><u>Terms and condition</u></b></h5>
+					     <p class="text-success">
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   
+						</p>
+						
+						<p class="text-info">
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   
+						</p>
+						
+						<p class="text-warning">
+							  
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+							   dfhj hf u ufhuf ufh uiruof hu ufhueqwouhifh
+						</p>
+						
+						
+					   </div>
+					 </div>
+				  
+				  <div class="form-group text-center">
+				    <button id="btn1" class="btn btn-success">Submit</button>
+				    <button id="btn2" class="btn btn-danger">Reset</button>
+				  </div>
+		      </div>
+						
+						------------------------------------------------------
+							<div class="col-sm-5">
+					<br>
+					<div class="panel panel-primary">
+						<div class="panel-heading"> Contact Us</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<input type="text" class="form-control input-sm" placeholder= "Enter Name">
+								<i id="nameerror">Invalid name</i>
+							</div>
+							
+							<div class="form-group">
+								<input type="text" class="form-control input-sm" placeholder= "Mobile No">
+								 <i id="mobileerror">Invalid Mobile</i>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control input-sm" placeholder= "Email">
+								<i id="emailerror">Invalid email</i>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control input-sm" placeholder="Your Query"> </textarea>
+							</div>
+							<div class="form-group text-center">
+							<button id="btn1" class="btn btn-success">Submit</button>
+							<button id="btn2" class="btn btn-danger">Reset</button>
+					</div>
+		     		
+					</div>
+					<div class="col-sm-1"></div>
+					</div>
+				</div><!--5 row end-->
+				<div class="col-sm-5">
+					<h3> Our Address</h3>
+					<b>BSR PARADISE</b><br>
+					<p>
+						Sy.No: 90,Parvathipuram,
+						Near Dr. Ambedkar Statue Service Road, 
+						Kolar Road,HOSKOTE.
+
+					</p>
+					<p>
+						Bangalore-562114.
+					</p>
+					<p> <b>Call Us : 935-3456-995 / 935-3445-427 </b>
+</p>
+					<p> E- Mail : bsrlayout@gmail.com</p>
+					<div class="form-group">
+								<button class="btn btn-success btn-sm"> Send Whatsapp Message </button>
+							</div>
+				</div>
+				</div>
+			</div><!--row  end-->
+			
+			
+			<div class="row footer">
+				<div class="col-sm-12 text-center">
+					<h4> Location Map</h4>
+					<p>
+						https://goo.gl/maps/asbgTZGwLWtb3HaE6
+						
+						
+					</p>
+				</div>
+			</div>
+			
+			</div><!-- Main container end here-->
+		
+		</body>
+</html>
+
+<!-- Login Modal start here-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">User Login</h4>
+      </div>
+      <div class="modal-body">
+			<div class="form-group">
+				<label>Email</label>
+					<input type="text" class="form-control input-sm">
+			</div>
+			
+			<div class="form-group">
+				<label>Password</label>
+					<input type="password" class="form-control input-sm">
+			</div>
+      </div>
+	  
+      <div class="modal-footer bg-success">
+		<div class="text-center">
+        <button type="button" class="btn btn-primary">Login<i class ="fa fa-arrow-right"></button></i>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+		<i class="fa fa-times-circle"></i></button>
+			<hr>
+		<a href="" data-dismiss="modal" data-toggle="modal" data-target="#signup">
+			I m new user
+		</a>
+		
+      </div>
+    </div>
+	</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- signup  mpdal start here-->
+<!-- Modal -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">User Signup</h4>
+      </div>
+      <div class="modal-body">
+		
+		<div class="form-group">
+				<label>Name</label>
+					<input type="text" class="form-control input-sm">
+			</div>
+	  
+			<div class="form-group">
+				<label>Email</label>
+					<input type="text" class="form-control input-sm">
+			</div>
+			
+			<div class="form-group">
+				<label>Password</label>
+					<input type="password" class="form-control input-sm">
+			</div>
+			
+			<div class="form-group">
+				<label>Mobile No</label>
+					<input type="password" class="form-control input-sm">
+			</div>
+				
+				<div class="form-group">
+				<label>Address</label>
+					<textarea class="form-control"></textarea>
+			</div>
+			
+      </div>
+	  
+      <div class="modal-footer bg-success">
+		<div class="text-center">
+        <button type="button" class="btn btn-primary" >Register</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		
+		<hr>
+		<a href="" data-dismiss="modal" data-toggle="modal" data-target="#myModal">
+			I have account
+		</a>
+		
+      </div>
+    </div>
+	</div>
+  </div>
+</div>
+
+    <br>
+				
+	     <div class="col-sm-1"></div>
+	  </div>
+	</div>
+  </body>
+</html>
